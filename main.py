@@ -2,6 +2,8 @@ import customtkinter as ctk
 import pyodbc
 import pandas as pd
 from sqlalchemy import create_engine
+import time
+from datetime import datetime
 
 
 server = r"SCADA_POTRESI\WINCC"  # server IP or hostname
@@ -130,21 +132,31 @@ query = """SELECT [Current_Time]
       ,[FFV_IN_6_1_05_State]
       ,[FFV_IN_6_1_06_State]
   FROM [IN23_Plant].[dbo].[General_Table]"""
+print("Query created")
+print()
 
 connection_str = f'mssql+pyodbc://{username}:{
     password}@{server}/{database}?driver=SQL+Server'
 
+starting_time = datetime.now()
+starting_time.strftime("%H:%M:%S")
 try:
     # Create an SQLAlchemy engine
     engine = create_engine(connection_str)
-
+    print("Connection Successful...")
+    time.sleep(1)
+    print("Reading Data...")
     # Use pandas to read the SQL query into a DataFrame
     dataframe = pd.read_sql(query, engine)
-
     # Save the DataFrame to an Excel file
     dataframe.to_csv('table.csv', index=False)
-
-    print("Data has been successfully written to 'table.xlsx'")
+    print("Writing data to a CSV file...")
+    print("Data has been successfully written to 'table.csv'!")
+    finish_time = datetime.now()
+    finish_time.strftime("%H:%M:%S")
+    time_of_execution = finish_time - starting_time
+    print()
+    print("Time it took to finish te reading:", time_of_execution)
 
 except Exception as e:
     print("Error:", e)
