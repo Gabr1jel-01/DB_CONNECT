@@ -1,5 +1,5 @@
-import customtkinter as ctk
-import pyodbc
+
+
 import pandas as pd
 from sqlalchemy import create_engine
 import time
@@ -148,6 +148,12 @@ try:
     print("Reading Data...")
     # Use pandas to read the SQL query into a DataFrame
     dataframe = pd.read_sql(query, engine)
+
+    # prije pd read nakon pd read i nakonn dartaframetocsv staviti vrijeme i koliko rtreba da se to sve izvrsi od pocetka.
+    # probati pokrenuti skriptu na scada racunalu
+    # pokrenuti skriptu kada sam spojen sa ethernetom a ne preko wifija
+    # u queryu zamjeniti sve nazive stupaca sa * (kao da ne cita jedan po jedan nego sve neka loada)
+
     # Save the DataFrame to an Excel file
     dataframe.to_csv('table.csv', index=False)
     print("Writing data to a CSV file...")
