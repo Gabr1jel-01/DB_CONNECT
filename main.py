@@ -21,8 +21,8 @@ query = """SELECT * FROM [IN23_Plant].[dbo].[General_Table]"""
 print("Query created")
 print()
 
-connection_str = f'mssql+pyodbc://{username}:{
-    password}@{server}/{database}?driver=SQL+Server'
+connection_str = f"""mssql+pyodbc://{username}:{
+    password}@{server}/{database}?driver=SQL+Server"""
 
 date_for_file_name = datetime.now().strftime("%Y_%m_%d_%H_%M")
 
