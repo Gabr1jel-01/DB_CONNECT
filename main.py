@@ -49,7 +49,7 @@ try:
     # Save the DataFrame to an Excel file
 
     dataframe.to_csv(
-        'Readings_' + f"{date_for_file_name}.txt", index=False, sep=";")
+        'Readings_' + f"{date_for_file_name}.txt", index=False, sep=";", decimal=",")
 
     print("Writing data to a CSV file...")
     print("Data has been successfully written to 'table.csv'!")
