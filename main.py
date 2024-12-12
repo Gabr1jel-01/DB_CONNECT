@@ -12,7 +12,6 @@ import time
 from datetime import datetime
 
 
-
 server = r"SCADA_POTRESI\WINCC"  # server IP or hostname
 database = "IN23_Plant"  # database name
 username = "remote_login"  # username is added to the SQL Server logins
