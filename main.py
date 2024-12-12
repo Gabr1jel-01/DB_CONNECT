@@ -1,16 +1,16 @@
 # TO DO
 
-# prije pd read nakon pd read i nakonn dartaframetocsv staviti vrijeme i koliko rtreba da se to sve izvrsi od pocetka.
-# probati pokrenuti skriptu na scada racunalu
-# pokrenuti skriptu kada sam spojen sa ethernetom a ne preko wifija
-# u queryu zamjeniti sve nazive stupaca sa * (kao da ne cita jedan po jedan nego sve neka loada)
+# prije pd read nakon pd read i nakonn dartaframetocsv staviti vrijeme i koliko rtreba da se to sve izvrsi od pocetka. DONE
+# probati pokrenuti skriptu na scada racunalu DONE
+# pokrenuti skriptu kada sam spojen sa ethernetom a ne preko wifija DONE
+# u queryu zamjeniti sve nazive stupaca sa * (kao da ne cita jedan po jedan nego sve neka loada) DONE
 
 
 import pandas as pd
 from sqlalchemy import create_engine
 import time
 from datetime import datetime
-import csv
+
 
 
 server = r"SCADA_POTRESI\WINCC"  # server IP or hostname
