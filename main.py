@@ -10,6 +10,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import time
 from datetime import datetime
+import pyodbc
 
 
 server = r"SCADA_POTRESI\WINCC"  # server IP or hostname
